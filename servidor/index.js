@@ -25,11 +25,21 @@ app.use(
     secret: process.env.SECRET,
     algorithms: ["HS256"],
     getToken: req => req.cookies.token
-  }).unless({ path: ["/autenticar", "/logar", "/deslogar", "/sobre"] })
+  }).unless({ path: ["/listarUser", "/cadastrar", "/autenticar", "/logar", "/deslogar", "/sobre"] })
 );
 
 app.get('/autenticar', async function(req, res){
   res.render('autenticar');
+})
+
+app.get('/listarUser', async function(req, res){
+  const usuario_s = await usuario.findAll();
+  res.json('usuario_s');
+  res.render('listarUser');
+})
+
+app.get('/cadastrar', async function(req, res){
+  res.render('cadastrar');
 })
 
 app.get('/', async function(req, res){
@@ -52,6 +62,11 @@ app.post('/logar', (req, res) => {
   }
 
   res.status(500).json({message: 'Login inválido!'});
+})
+
+app.post('/cadastrar', async function(req, res){
+  const usu_ario = await usuario.create(req.body)
+  res.json(usu_ario)
 })
 
 app.post('/deslogar', function(req, res) {

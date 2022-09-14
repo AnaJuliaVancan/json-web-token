@@ -33,9 +33,8 @@ app.get('/autenticar', async function(req, res){
 })
 
 app.get('/listarUser', async function(req, res){
-  const usuario_s = await usuario.findAll();
-  res.json('usuario_s');
-  res.render('listarUser');
+  const usuarios = await usuario.findAll();
+  res.json('usuarios');
 })
 
 app.get('/cadastrar', async function(req, res){
@@ -47,7 +46,7 @@ app.get('/', async function(req, res){
 })
 
 app.get('/sobre', async function(req, res){
-  res.render("sobre")
+  res.render("sobre");
 })
 
 app.post('/logar', (req, res) => {
@@ -65,8 +64,8 @@ app.post('/logar', (req, res) => {
 })
 
 app.post('/cadastrar', async function(req, res){
-  const usu_ario = await usuario.create(req.body)
-  res.json(usu_ario)
+  const usuarioCadastrado = await usuario.create(req.body);
+  res.json(usuarioCadastrado);
 })
 
 app.post('/deslogar', function(req, res) {

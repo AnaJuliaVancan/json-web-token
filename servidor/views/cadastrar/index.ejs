@@ -15,20 +15,19 @@
     </div>
   </nav>
 
-  <div id="formLogar" class="container col-6 border border-dark" action="/cadastrar" method="post">
-    <div class="mb-3">
+  <form action="/cadastrar" method="post">
+    
       <label for="usuario">Usuário:</label>
-      <input type="text" name="usuario" id="usuario" class=" form-control border-dark p-2 mb-2 col-6">
-    </div>
-    <div class="mb-3">
+      <input type="text" name="usuario" id="usuario" >
+    
+  
         <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome" class=" form-control border-dark p-2 mb-2 col-6">
-      </div>
-    <div class="mb-3">
+        <input type="text" name="nome" id="nome" >
+   
       <label for="senha">Senha:</label>
-      <input type="text" name="senha" id="senha" class="form-control border-dark p-2 mb-2 col-6">
-    </div>
-    <input type="submit" class="btn btn-outline-dark" value="Cadastrar">
-  </div>
+      <input type="text" name="senha" id="senha" >
+   
+    <input type="submit"  value="Cadastrar">
+  </form>
 </body>
 </html>

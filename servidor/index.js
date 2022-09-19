@@ -49,8 +49,9 @@ app.get('/sobre', async function(req, res){
   res.render("sobre");
 })
 
-app.post('/logar', (req, res) => {
-  if(req.body.user === 'ana' && req.body.password === '183'){
+app.post('/logar', async (req, res) => {
+  const users = await usuario.findOne({where:{user:req.body.user}})
+  if(req.body.user === users.user && req.body.password === users.senha){
     const id = 1;
     const token = jwt.sign({ id }, process.env.SECRET, {
       expiresIn: 3600 // expires in 1 hora

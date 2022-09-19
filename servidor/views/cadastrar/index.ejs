@@ -8,26 +8,22 @@
   <link rel="stylesheet" href="/css/style.css">
   <title>Cadastrar</title>
 </head>
-<body>
-  <nav class="navbar" style="background-color: SteelBlue;">
-    <div class="container-fluid">
-      <h1>Cadastrar</h1>
-    </div>
-  </nav>
+  <body>
 
-  <form action="/cadastrar" method="post">
-    
-      <label for="usuario">Usuário:</label>
-      <input type="text" name="usuario" id="usuario" >
-    
-  
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome" >
-   
-      <label for="senha">Senha:</label>
-      <input type="text" name="senha" id="senha" >
-   
-    <input type="submit"  value="Cadastrar">
-  </form>
-</body>
+    <form id="formLogar" class="container col-6 border border-dark" action="/cadastrar" method="post">
+       <div>
+        <label for="usuario">Usuário:</label>
+        <input type="text" name="usuario" id="usuario" >
+      </div>
+      <div>
+          <label for="nome">Nome:</label>
+          <input type="text" name="nome" id="nome" >
+      </div>
+      <div>
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" id="senha" >
+      </div>
+      <input type="submit"  value="Cadastrar">
+    </form>
+  </body>
 </html>

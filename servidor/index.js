@@ -51,7 +51,6 @@ app.get('/sobre', async function(req, res){
 })
 
 app.post('/logar', (req, res) => {
-  console.log(req.body)
   if(req.body.user === 'ana' && req.body.password === '183'){
     const id = 1;
     const token = jwt.sign({ id }, process.env.SECRET, {

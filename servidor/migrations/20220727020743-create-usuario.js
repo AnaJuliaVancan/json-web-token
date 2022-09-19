@@ -15,7 +15,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      usuario: {
+      user: {
         allowNull: false,
         type: Sequelize.STRING
       },

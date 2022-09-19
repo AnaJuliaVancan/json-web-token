@@ -34,8 +34,7 @@ app.get('/autenticar', async function(req, res){
 
 app.get('/listarUser', async function(req, res){
   const usuarios = await usuario.findAll();
-  res.json('usuarios');
-  //res.render('listarUser', { usuarios });
+  res.render('listarUser', { usuarios });
 })
 
 app.get('/cadastrar', async function(req, res){

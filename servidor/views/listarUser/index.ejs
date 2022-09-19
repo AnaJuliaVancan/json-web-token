@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,9 +28,16 @@
     </div>
   </nav>
 
-  <div>
-    
-  </div>
+  <% usuarios.forEach(function(usuario){ %> 
+    <div id="cards" class="card" style="width: 18rem;">
+      <ul class="list-group list-group-flush text-center">
+        <li class="list-group-item">Usuário</li>
+      </ul>
+      <p>Usuário: <%= usuario.user%></p>
+      <p>Nome: <%= usuario.nome%></p>
+      <p>Senha: <%= usuario.senha%></p>
+    </div>
+  <%}) %>
 
-</body>
+ </body>
 </html>

@@ -10,20 +10,40 @@
 </head>
   <body>
 
+    <nav class="navbar navbar-expand-lg" style="background-color: #000000;">
+      <div class="container-fluid text-white">
+        <h1>Timmy's NEWS</h1>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="#">Cadastrar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="#">Listar usuários</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <form id="formLogar" class="container col-6 border border-dark" action="/cadastrar" method="post">
-       <div>
+      <h2>Cadastrar</h2>
+       <div class="mb-3">
         <label for="usuario">Usuário:</label>
-        <input type="text" name="usuario" id="usuario" >
+        <input class=" form-control border-dark p-2 mb-2 col-6" type="text" name="usuario" id="usuario" >
       </div>
-      <div>
+      <div class="mb-3">
           <label for="nome">Nome:</label>
-          <input type="text" name="nome" id="nome" >
+          <input class=" form-control border-dark p-2 mb-2 col-6" type="text" name="nome" id="nome" >
       </div>
-      <div>
+      <div class="mb-3">
         <label for="senha">Senha:</label>
-        <input type="password" name="senha" id="senha" >
+        <input class=" form-control border-dark p-2 mb-2 col-6" type="password" name="senha" id="senha" >
       </div>
-      <input type="submit"  value="Cadastrar">
+      <input type="submit" class="btn btn-outline-dark" value="Cadastrar">
     </form>
   </body>
 </html>

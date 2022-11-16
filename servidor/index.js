@@ -70,7 +70,7 @@ app.get('/sobre', async function(req, res){
 
 app.post('/logar', async (req, res) => {
   const users = await usuario.findOne({where:{user:req.body.user}})
-  if(req.body.user === users.user && req.body.password === users.senha){
+  if(req.body.user === users.user && req.body.password === decrypt(users.senha)){
     const id = 1;
     const token = jwt.sign({ id }, process.env.SECRET, {
       expiresIn: 3600 // expires in 1 hora
@@ -85,6 +85,7 @@ app.post('/logar', async (req, res) => {
 
 app.post('/cadastrar', async function(req, res){
   const usuarioCadastrado = await usuario.create(req.body);
+  var senhaCripto = {nome: req.body.nome, user: req.body.user, senha: encrypt(req.body.senha)}
   res.json(usuarioCadastrado);
 })
 
